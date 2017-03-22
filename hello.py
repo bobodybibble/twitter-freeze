@@ -15,9 +15,12 @@ def hello():
 @app.route("/signup", methods=['POST'])
 def sign_up():
     form_data = request.form
-    print form_data['hashtag']
-    print form_data['email']
-    print form_data['rawdata']
+    hashtag = form_data.getvalue('hashtag')
+    email = form_data.getvalue('email')
+    rawdata = form_data.getvalue('rawdata')
+
+    os.system('Streamlistener.py' > rawdata.txt)
+
     return render_template("allok.html")
 
 #added bit to deploy using heroku
